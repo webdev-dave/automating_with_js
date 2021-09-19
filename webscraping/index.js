@@ -26,4 +26,4 @@ async function fetchLiteracyRates() {
   fs.writeFileSync("output.txt", fileString);
 }
 
-fetchLiteracyRates(url);
+fetchLiteracyRates();

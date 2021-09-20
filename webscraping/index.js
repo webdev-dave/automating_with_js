@@ -17,10 +17,9 @@ async function fetchLiteracyRates() {
       const $row = $(element);
 
       const countryName = $row.find("a").first().text();
-      fileString += countryName;
-
       const literacyRate = $row.find("td").slice(1, 2).text();
-      fileString += `, ${literacyRate}\n`;
+
+      fileString += `${countryName}, ${literacyRate}\n`;
     });
 
   fs.writeFileSync("output.txt", fileString);

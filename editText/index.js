@@ -2,9 +2,9 @@ const fs = require("fs");
 
 let fileString = fs.readFileSync("input.txt").toString();
 
-//Fill out initials
-fileString = fileString.replace(/K:/g, "Kevin:");
-fileString = fileString.replace(/E:/g, "Eric:");
+//Fill out the initials
+fileString = fileString.replace(/K:/g, "Kevin: ");
+fileString = fileString.replace(/E:/g, "Eric: ");
 
 //Add line number
 const characterArray = fileString.split("");

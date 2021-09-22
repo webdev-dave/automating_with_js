@@ -8,6 +8,7 @@ const imdb = { x: 50, y: 230, color: "000000" };
 
 while (robot.getPixelColor(imdb.x, imdb.y) !== imdb.color) {
   msleep(500);
+  console.log("we is running");
 }
 
 robot.moveMouseSmooth(xCenter, yCenter);

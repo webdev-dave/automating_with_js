@@ -1,5 +1,4 @@
 const fs = require("fs");
-const open = require("open");
 
 const csvGenerator = require("./csv_generator");
 const sendMail = require("./send_email");
@@ -16,6 +15,3 @@ sendMail("kaecsvemailproject@gmail.com", {
   filename: "meow2",
   content: domainCountCSV,
 });
-
-// Open output CSV
-open("./csvFiles/DOMAIN_COUNT.csv");

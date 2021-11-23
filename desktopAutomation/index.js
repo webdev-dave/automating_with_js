@@ -7,7 +7,7 @@ const paragraph = {
   topLeft: { x: 66, y: 164 },
   bottomRight: { x: 656, y: 364 },
 };
-const factButton = { x: 160, y: 440, color: "135aff" };
+const factButton = { x: 160, y: 420, color: "135aff" };
 
 while (robot.getPixelColor(factButton.x, factButton.y) !== factButton.color) {
   msleep(500);

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const msleep = require("./../utility").msleep;
-const { Builder, By, Key, until } = require("selenium-webdriver");
+const { Builder, By, Key } = require("selenium-webdriver");
 
 async function main() {
   let fileString = "";
@@ -8,11 +8,12 @@ async function main() {
   await driver.manage().window().maximize();
   await driver.get("https://en.wikipedia.org/wiki/Main_Page");
 
+  msleep(2000);
   const searchInput = await driver.findElement(By.css("#searchInput"));
   await searchInput.sendKeys("List of countries by literacy rate");
-  msleep(2000);
   await searchInput.sendKeys(Key.DOWN, Key.ENTER);
 
+  msleep(2000);
   const tables = await driver.findElements(
     By.css("table.wikitable.sortable.static-row-numbers")
   );
@@ -28,6 +29,7 @@ async function main() {
     const literacyRate = await literacyRateCol.getText();
 
     fileString += `${countryName}, ${literacyRate}\n`;
+    console.log(`Grabbed literacy rate of ${countryName}`);
   }
 
   fs.writeFileSync("output.txt", fileString);

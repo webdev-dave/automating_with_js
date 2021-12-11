@@ -13,7 +13,6 @@
   - Modifying CSVs and Excel Files
   - Sending emails
   - Webscraping
-  - Downloading Files
   - Working with APIs
   - Desktop / GUI Automation
   - Selenium

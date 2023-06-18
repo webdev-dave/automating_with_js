@@ -1,27 +1,41 @@
 const fs = require("fs");
 const fileNames = fs.readdirSync("./sampleFiles");
 
-
-const digitsRegex = /\d{1,}/;
-const lettersRegex = /[a-zA-Z]{1,}/;
-const fileTypeRegex = /[\.](.{1,})/;
-
 //commandLineArgument accepts an input argument from the command line.
 //for example using the default {node index.js} call append on an argument {node index.js helloWorld}
 const commandLineArgument = process.argv[2];
 
-console.log(fileNames);
+const digitsRegex = /\d+/;
+const lettersRegex = /([^\d\.\-_]+|[\.\-_])/g;
+const fileTypeRegex = /\.[^\s\.]+$/;
+
+
 for (const fileName of fileNames) {
-  const name = fileName.match(lettersRegex) && fileName.match(lettersRegex)[0];
-  const studentId =
+  //name includes all characters except for numbers (including: -||_||.)
+  //StudentIdNumber never includes any characters other than numbers
+  const name = fileName.match(lettersRegex) && fileName.match(lettersRegex);
+  let joinedName = name.slice(0, -2).join("").replace(" ", "-");
+  const fileType =
+    fileName.match(fileTypeRegex) && fileName.match(fileTypeRegex)[0];
+  const studentIdNumber =
     fileName.match(digitsRegex) && fileName.match(digitsRegex)[0];
-  const fileType = fileName.match(fileTypeRegex)[0];
-  if (name && studentId) {
+
+  //if name currently starts or ends with decimal, dash or underscore (aka - divChars) then remove them
+  const startsWithDivChars = /^[\.\-_]+/;
+  const endsWithDivChars = /[\.\-_]+$/;
+  if (joinedName.match(startsWithDivChars)) {
+    joinedName = joinedName.replace(startsWithDivChars, "");
+  }
+  if (joinedName.match(endsWithDivChars)) {
+    joinedName = joinedName.replace(endsWithDivChars, "");
+  }
+
+  if (name && studentIdNumber) {
     let newFileName;
     if (commandLineArgument === "nameFirst") {
-      newFileName = `${name}${studentId}${fileType}`;
+      newFileName = `${joinedName}-${studentIdNumber}${fileType}`;
     } else if (commandLineArgument === "idFirst") {
-      newFileName = `${studentId}${name}${fileType}`;
+      newFileName = `${studentIdNumber}-${joinedName}${fileType}`;
     } else {
       //if no command or wrong command is given
       console.log(
@@ -31,6 +45,11 @@ for (const fileName of fileNames) {
       throw "Please enter a valid CL argument!!";
     }
 
-    fs.renameSync(`./sampleFiles/${fileName}`, `./sampleFiles/${newFileName}`);
+    if(fileName !== newFileName){
+      console.log("renamed: ",fileName,"to: ", newFileName);
+      fs.renameSync(`./sampleFiles/${fileName}`, `./sampleFiles/${newFileName}`);
+    } else {
+      console.log("no changes necessary for file named: ", fileName);
+    }
   }
 }

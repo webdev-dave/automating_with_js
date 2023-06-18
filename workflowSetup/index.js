@@ -9,7 +9,7 @@ const urls = [
 
 //urls.forEach(url => open(url));
 
-open("/d/c/10 - Nigun - Belz.mp3");
+open.openApp("Telegram");
 
 
 

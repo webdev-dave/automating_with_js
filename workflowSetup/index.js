@@ -1,14 +1,21 @@
-const open = require("open");
+import open from "open";
 
 const urls = [
-  "https://www.reddit.com/",
-  "https://9gag.com/",
-  "https://www.nytimes.com/",
-  "https://www.reuters.com/",
+  "https://github.com/webdev-dave",
+  "https://app.netlify.com/teams/e-d-richard/overview",
+  "https://www.duolingo.com/learn",
+  "https://www.codecademy.com/career-journey/full-stack-engineer/path/fscj-22-web-development-foundations/track/fscj-22-welcome-to-the-full-stack-engineer-path"
 ];
 
-for (const url of urls) {
-  open(url, { app: { name: "google chrome" } });
-}
+//urls.forEach(url => open(url));
 
-open("/Applications/Spotify.app/Contents/MacOS/Spotify");
+open("/d/c/10 - Nigun - Belz.mp3");
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jimp": "^0.16.13"
+    "jimp": "^0.16.13",
+    "probe-image-size": "^7.2.3"
   }
 }

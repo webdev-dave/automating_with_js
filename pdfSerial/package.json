@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hummus": "^1.0.110",
+    "muhammara": "^3.8.0",
     "pdf-parse": "^1.1.1"
   }
 }

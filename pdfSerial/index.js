@@ -6,20 +6,28 @@ const pdfParse = require("pdf-parse");
 const muhammara = require("muhammara");
 /* cSpell:ignore muhammara, pdfs */
 
-async function main(){
+async function main() {
   const pdfFiles = fs.readdirSync("./pdfs/input");
 
-  for(const pdfFile of pdfFiles){
+  for (const pdfFile of pdfFiles) {
     const pathToCurrentPDF = `./pdfs/input/${pdfFile}`;
-    const data = await pdfParse(fs.readFileSync(pathToCurrentPDF), {max: 1});
-    //grab serial from first page in pdf
-    const serial = data.text.trim();
-    console.log(serial);
-    //Create a new PDF by grabbing the first page of each input pdf
-    const pdfWriter = muhammara.createWriter(`./pdfs/output/${serial}.pdf`);
-    pdfWriter.appendPDFPagesFromPDF(pathToCurrentPDF, {type: muhammara.eRangeTypeSpecific, specificRanges: [[0,0]]});
-    pdfWriter.end();
+    //check if fileType is a PDF file
+    if (pdfFile.match(/\.pdf$/)) {
+      //only get data on page 1
+      const data = await pdfParse(fs.readFileSync(pathToCurrentPDF), {
+        max: 1,
+      });
+      //grab serial from first page in pdf
+      const serial = data.text.trim();
+      //Create a new PDF by grabbing the first page of each input pdf
+      const pdfWriter = muhammara.createWriter(`./pdfs/output/${serial}.pdf`);
+      pdfWriter.appendPDFPagesFromPDF(pathToCurrentPDF, {
+        type: muhammara.eRangeTypeSpecific,
+        specificRanges: [[0, 0]],
+      });
+      pdfWriter.end();
+    }
   }
-}; 
+}
 
 main();

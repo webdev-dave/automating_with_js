@@ -1,4 +1,13 @@
-import * as XLSX from "xlsx/xlsx.mjs"
+import * as XLSX from "xlsx/xlsx.mjs";
+//import { read } from "xlsx/xlsx.mjs";
+import * as fs from "fs";
+
+const spreadSheet = fs.readFileSync("./scores.xlsx"); 
+const workbook = XLSX.read(spreadSheet);
+const workSheet = workbook.Sheets["Sheet1"];
+
+const studentsArr = XLSX.utils.sheet_to_json(workSheet, {});
+console.log(studentsArr);
 
 
 

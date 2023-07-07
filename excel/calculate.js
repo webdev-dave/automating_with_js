@@ -1,12 +1,11 @@
 import * as XLSX from "xlsx/xlsx.mjs";
-//import { read } from "xlsx/xlsx.mjs";
 import * as fs from "fs";
 
-const spreadSheet = fs.readFileSync("./scores.xlsx");
+export const spreadSheet = fs.readFileSync("./scores.xlsx");
 const workbook = XLSX.read(spreadSheet);
 const workSheet = workbook.Sheets["Sheet1"];
 
-export const studentsArr = XLSX.utils.sheet_to_json(workSheet, {});
+const studentsArr = XLSX.utils.sheet_to_json(workSheet, {});
 const highSchoolData = {};
 //highSchoolName: {numStudents: 0, cumulativeScore: 0}
 

@@ -1,19 +1,27 @@
 import * as XLSX from "xlsx";
-//import { read } from "xlsx/xlsx.mjs";
 import * as fs from "fs";
 
-import { studentsArr } from "./calculate.js";
+const spreadSheet = fs.readFileSync("./scores.xlsx");
+const workbook = XLSX.read(spreadSheet);
+const worksheet = workbook.Sheets["Sheet1"];
+const range = XLSX.utils.decode_range(worksheet["!ref"]);//Grabs number of rows and columns in our worksheet
 
-studentsArr.forEach((student) => {
-  console.log(student);
-  if (student["High School"] === "Lead Paint HS") {
-    student["T2 Score"] += 100;
+//console.log(range);
+
+//Loop over every row/student in our worksheet
+for(let rowNum = range.s.r; rowNum <= range.e.r; rowNum++){
+  const highSchool = worksheet[XLSX.utils.encode_cell({r: rowNum, c: 1})].v;
+  //give extra 30 points to Test #2 for all students of Lead Paint HS
+
+  if(highSchool === "Lead Paint HS"){
+    const testTwoRow = 3; 
+    worksheet[XLSX.utils.encode_cell({r: rowNum, c: testTwoRow})].v += 30;
   }
-});
+}
+
+const newWb = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(newWb, worksheet, "Sheet1");
+XLSX.writeFile(newWb, "scoresWithCurve.xlsx");
 
 
 
-const newWorkSheet = XLSX.utils.json_to_sheet(studentsArr);
-const newWorkBook = XLSX.utils.book_new();
-XLSX.utils.book_append_sheet(newWorkBook, newWorkSheet, "Bad Sheet");
-XLSX.writeFile (newWorkBook, "scores2.xlsx");

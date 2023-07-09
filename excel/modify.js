@@ -31,6 +31,6 @@ for(const file of localFiles){
     fs.renameSync(file, `${pathToCurrentDir}/spreadsheets/${file}`)
   }
 }
-console.log(pathToCurrentDir);
+
 
 

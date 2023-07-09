@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx/xlsx.mjs";
 import * as fs from "fs";
 
-export const spreadSheet = fs.readFileSync("./scores.xlsx");
+export const spreadSheet = fs.readFileSync("./spreadsheets/scores.xlsx");
 const workbook = XLSX.read(spreadSheet);
 const workSheet = workbook.Sheets["Sheet1"];
 

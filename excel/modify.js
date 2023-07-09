@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 import * as fs from "fs";
 
-const spreadSheet = fs.readFileSync("./scores.xlsx");
+const spreadSheet = fs.readFileSync("./spreadsheets/scores.xlsx");
 const workbook = XLSX.read(spreadSheet);
 const worksheet = workbook.Sheets["Sheet1"];
 const range = XLSX.utils.decode_range(worksheet["!ref"]);//Grabs number of rows and columns in our worksheet
@@ -23,5 +23,14 @@ const newWb = XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(newWb, worksheet, "Sheet1");
 XLSX.writeFile(newWb, "scoresWithCurve.xlsx");
 
+//move scoresWithCurve into the <spreadsheets> directory
+const localFiles = fs.readdirSync("./");
+const pathToCurrentDir = process.cwd();
+for(const file of localFiles){
+  if(file === "scoresWithCurve.xlsx"){
+    fs.renameSync(file, `${pathToCurrentDir}/spreadsheets/${file}`)
+  }
+}
+console.log(pathToCurrentDir);
 
 

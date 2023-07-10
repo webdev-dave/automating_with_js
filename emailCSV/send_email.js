@@ -1,8 +1,9 @@
-const mailer = require("nodemailer");
-require("dotenv").config();
+import nodemailer from "nodemailer"
 
-const sendEmail = (to, attachment1) => {
-  const smtpTransport = mailer.createTransport({
+import 'dotenv/config';
+
+export const sendEmail = (to, attachment1) => {
+  const smtpTransport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
       user: process.env.EMAIL,
@@ -11,7 +12,7 @@ const sendEmail = (to, attachment1) => {
   });
 
   const mail = {
-    to,
+    to: to,
     subject: `Weekly CSVs`,
     text: "Here you go Mr. Boss",
     attachments: [
@@ -22,13 +23,13 @@ const sendEmail = (to, attachment1) => {
     ],
   };
 
-  smtpTransport.sendMail(mail, function (error, response) {
+  smtpTransport.sendMail(mail, (error, response) => {
     if (error) {
       console.log(error);
     } else {
+      console.log("successfully sent!")
     }
     smtpTransport.close();
   });
 };
 
-module.exports = sendEmail;

@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import 'dotenv/config'; // used to import the sender email login and password using a global variable set in a local .env file
+import 'dotenv/config'; // used to import the sender email login and password using environment variables set in a local .env file
 // Note! the .env file containing the sender email account info is will not be visible on the github repo because .env is included in the files to be ignored by .gitignore due to the security risk involved with making my personal email address login info available publicly.
 
 export const sendEmail = (to, attachment1) => {

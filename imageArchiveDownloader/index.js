@@ -1,29 +1,47 @@
-const fs = require("fs");
-const axios = require("axios");
-const cheerio = require("cheerio");
-const dateFormat = require("dateformat");
+import * as fs from "fs";
+import path from "path";
+// Note!! cheerio uses jQuery syntax
+import * as cheerio from "cheerio";
+import axios from "axios";
+import dateFormat from "dateformat";
 
+main();
 async function main() {
   const dates = fs.readFileSync("input.txt").toString().split("\n");
 
-  for (const date of dates) {
+  for await (const date of dates) {
+    console.log("downloading", date)
     const wikiCompatibleDate = dateFormat(date, "yyyy-mm-dd");
+    const usDateFormat = dateFormat(date, "mm-dd-yyyy");
     const res = await axios.get(
       `https://en.wikipedia.org/wiki/Template:POTD/${wikiCompatibleDate}`
     );
+
     const $ = cheerio.load(res.data);
 
     const imageSrc = $("div a.image img").attr("src");
     const imageUrl = `https:${imageSrc}`;
-    const image = await axios({
-      method: "get",
-      url: imageUrl,
-      responseType: "stream",
-    });
 
-    const usDateFormat = dateFormat(date, "mm-dd-yyyy");
-    image.data.pipe(fs.createWriteStream(`${usDateFormat}.jpg`));
+    if (imageSrc) {
+      const image = await axios({
+        method: "get",
+        url: imageUrl,
+        responseType: "stream",
+      });
+      const imageFileName = `${usDateFormat}_wiki_POTD.jpg`;
+      image.data.pipe(fs.createWriteStream(`${imageFileName}`));
+    } else {
+      //If picture of the day is a video or other media type
+      console.log(`Error! the wiki POTD for ${usDateFormat} is not an image`);
+    }
   }
+  //moveImagesToDir();
 }
 
-main();
+// function moveImagesToDir() {
+//   const pathToCurrentDir = process.cwd();
+//   const jpgFiles = fs.readdirSync("./").filter((file) => file.endsWith(".jpg"));
+//   jpgFiles.forEach((file) =>
+//     fs.renameSync(file, `${pathToCurrentDir}/downloadedImages/${file}`)
+//   );
+// }

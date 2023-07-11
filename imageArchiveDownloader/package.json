@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "nasawallpaper",
   "version": "1.0.0",
   "description": "",
@@ -9,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.10",
-    "dateformat": "^3.0.3"
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dateformat": "^5.0.3"
   }
 }

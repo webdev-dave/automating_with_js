@@ -29,19 +29,22 @@ async function main() {
         responseType: "stream",
       });
       const imageFileName = `${usDateFormat}_wiki_POTD.jpg`;
-      image.data.pipe(fs.createWriteStream(`${imageFileName}`));
+      image.data.pipe(fs.createWriteStream(`./downloadedImages/${imageFileName}`));
+    
     } else {
       //If picture of the day is a video or other media type
       console.log(`Error! the wiki POTD for ${usDateFormat} is not an image`);
     }
   }
-  //moveImagesToDir();
 }
 
-// function moveImagesToDir() {
+
+// async function moveImagesToDir() {
 //   const pathToCurrentDir = process.cwd();
 //   const jpgFiles = fs.readdirSync("./").filter((file) => file.endsWith(".jpg"));
-//   jpgFiles.forEach((file) =>
+//   console.log(jpgFiles);
+//   for await(const file of jpgFiles){
 //     fs.renameSync(file, `${pathToCurrentDir}/downloadedImages/${file}`)
-//   );
+//   }
+
 // }

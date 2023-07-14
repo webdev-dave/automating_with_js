@@ -2,19 +2,23 @@ const fs = require("fs");
 const msleep = require("./../utility").msleep;
 const { Builder, By, Key } = require("selenium-webdriver");
 
+
 main();
 async function main() {
   let fileString = "";
   let driver = await new Builder().forBrowser("chrome").build();
   await driver.manage().window().maximize();
-  await driver.get("https://en.wikipedia.org/wiki/Main_Page");
+  await driver.get("https://en.wikipedia.org");
 
-  msleep(4000);
+  msleep(2000);
   const searchInput = await driver.findElement(By.css("#searchInput"));
   await searchInput.sendKeys("List of countries by literacy rate");
-  await searchInput.sendKeys(Key.DOWN, Key.ENTER);
+  msleep(2000);
+  await searchInput.sendKeys(Key.DOWN);
+  await searchInput.sendKeys(Key.ENTER)
+  console.log('done')
 
-  msleep(6000);
+  msleep(4000);
   // const tables = await driver.findElements(
   //   By.css("table.wikitable.sortable.static-row-numbers")
   // );

@@ -1,0 +1,188 @@
+Armenia *, 99.8%
+Australia *, 99.0%
+Austria *, 98.0%
+Azerbaijan *, 99.8%
+Bahamas, 96.0%
+Bahrain *, 97.5%
+Bangladesh *, 74.66%
+Barbados *, 99.6%
+Belarus *, 99.9%
+Belgium *, 99.0%
+Belize *, 83.0%
+Benin *, 42.4%
+Bhutan *, 66.6%
+Bolivia *, 92.5%
+Bosnia and Herzegovina *, 98.5%
+Botswana *, 88.5%
+Brazil *, 93.2%
+Brunei *, 97.2%
+Bulgaria *, 98.4%
+Burkina Faso *, 39.3%
+Burundi *, 68.4%
+Cape Verde *, 86.8%
+Cambodia *, 80.5%
+Cameroon *, 77.1%
+Canada *, 99.0%
+Central African Republic *, 37.4%
+Chad *, 22.3%
+Chile *, 96.3%
+China *, 96.8%
+Colombia *, 95.6%
+Comoros *, 58.8%
+Congo *, 80.3%
+DR Congo *, 77.0%
+Costa Rica *, 97.9%
+Ivory Coast *, 89.9%
+Croatia *, 99.3%
+Cuba *, 99.8%
+Cyprus *, 99.1%
+Czech Republic *, 99.0%
+Denmark *, 99.0%
+Djibouti *, N/A
+Dominica *, 92.0%
+Dominican Republic *, 93.8%
+Ecuador *, 93.6%
+Egypt *, 71.2%
+El Salvador *, 89.1%
+Equatorial Guinea *, 95.3%
+Eritrea *, 76.6%
+Estonia *, 99.8%
+Ethiopia *, 51.8%
+Fiji *, 99.1%
+Finland *, 100.0%
+France *, 99.0%
+Gabon *, 84.7%
+Gambia *, 50.8%
+Georgia *, 99.6%
+Germany *, 99.0%
+Ghana *, 79.0%
+Greece *, 97.9%
+Grenada *, 98.6%
+Guatemala *, 80.8%
+Guinea *, 39.6%
+Guinea-Bissau *, 59.9%
+Guyana *, 88.5%
+Haiti *, 61.7%
+Honduras *, 88.5%
+Hungary *, 99.1%
+Iceland *, 99.0%
+India *, 74.4%
+Indonesia *, 96.0%
+Iran *, 85.5%
+Iraq *, 85.6%
+Ireland *, 99.0%
+Israel *, 97.8%
+Italy *, 99.2%
+Jamaica *, 88.7%
+Japan *, 99.0%
+Jordan *, 98.2%
+Kazakhstan *, 99.8%
+Kenya *, 81.5%
+Kiribati *, N/A
+North Korea *, 100.0%
+South Korea *, 98.0%
+Kuwait *, 96.5%
+Kyrgyzstan *, 99.6%
+Laos *, 84.7%
+Latvia *, 99.9%
+Lebanon *, 95.1%
+Lesotho *, 79.4%
+Liberia *, 48.3%
+Libya *, 91.0%
+Liechtenstein *, 100.0%
+Lithuania *, 99.8%
+Luxembourg *, 100.0%
+Macedonia *, 98.4%
+Madagascar *, 76.7%
+Malawi *, 62.1%
+Malaysia *, 95.0%
+Maldives *, 97.7%
+Mali *, 35.5%
+Malta *, 94.5%
+Marshall Islands *, 98.3%
+Mauritania *, 53.5%
+Mauritius *, 91.3%
+Mexico *, 95.2%
+Micronesia *, 99.0%
+Moldova *, 99.4%
+Monaco *, 99.0%
+Mongolia *, 99.2%
+Montenegro *, 98.8%
+Morocco *, 73.8%
+Mozambique *, 60.7%
+Myanmar *, 89.1%
+Namibia *, 91.5%
+Nauru *, 95.0%
+Nepal *, 67.9%
+Netherlands *, 99.0%
+New Zealand *, 99.0%
+Nicaragua *, 82.6%
+Niger *, 35.1%
+Nigeria *, 62.0%
+Norway *, 100.0%
+Oman *, 95.7%
+Pakistan *, 58.0%
+Palau *, 96.6%
+Panama *, 95.7%
+Papua New Guinea *, 64.2%
+Paraguay *, 94.5%
+Peru *, 94.5%
+Philippines *, 96.3%
+Poland *, 99.8%
+Portugal *, 96.1%
+Palestine *, 95.0%
+Qatar *, 93.5%
+Romania *, 98.8%
+Russia *, 99.7%
+Rwanda *, 73.2%
+Saint Kitts and Nevis *, 97.0%
+Saint Lucia *, 90.0%
+Saint Vincent and the Grenadines *, 96.0%
+Samoa *, 99.1%
+San Marino, 99.9%
+São Tomé and Príncipe *, 92.8%
+Saudi Arabia *, 97.6%
+Senegal *, 51.9%
+Serbia *, 99.5%
+Seychelles, 95.9%
+Sierra Leone *, 43.2%
+Singapore *, 97.5%
+Slovakia *, 100.0%
+Slovenia *, 99.7%
+Solomon Islands *, 77.0%
+Somalia *, 39.0%
+South Africa *, 95.0%
+South Sudan *, 34.5%
+Spain *, 98.6%
+Sri Lanka *, 92.3%
+Sudan *, 60.7%
+Suriname *, 94.4%
+Eswatini *, 88.4%
+Sweden *, 99.0%
+Switzerland *, 99.0%
+Syria *, 86.4%
+Taiwan *, 98.70%
+Tajikistan *, 99.8%
+Tanzania *, 77.9%
+Thailand *, 93.8%
+East Timor *, 68.1%
+Togo *, 66.5%
+Tonga *, 99.4%
+Trinidad and Tobago *, 99.0%
+Tunisia *, 81.8%
+Turkey *, 96.7%
+Turkmenistan *, 99.7%
+Tuvalu *, 99.0%
+Uganda *, 76.5%
+Ukraine *, 99.8%
+United Arab Emirates *, 97.6%
+United Kingdom *, 99.0%
+United States *, 86.0%
+Uruguay *, 98.8%
+Uzbekistan *, 100.0%
+Vanuatu *, 87.5%
+Venezuela *, 97.1%
+Vietnam *, 95.8%
+Yemen *, 70.1%
+Zambia *, 86.7%
+Zimbabwe *, 86.5%

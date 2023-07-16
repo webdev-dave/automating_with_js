@@ -10,33 +10,35 @@ async function main() {
   await driver.manage().window().maximize();
   await driver.get("https://en.wikipedia.org");
 
+
+  await searchInput().sendKeys("List of countries by literacy rate");
   msleep(2000);
-  const searchInput = await driver.findElement(By.css("#searchInput"));
-  await searchInput.sendKeys("List of countries by literacy rate");
+
+  await driver.findElement(By.css("ul.cdx-menu__listbox li:first-child")).click();
   msleep(2000);
-  await searchInput.sendKeys(Key.DOWN);
-  await searchInput.sendKeys(Key.ENTER)
-  console.log('done')
 
-  msleep(4000);
-  // const tables = await driver.findElements(
-  //   By.css("table.wikitable.sortable.static-row-numbers")
-  // );
-  // const alrTable = tables[1];
-  // let alrRows = await alrTable.findElements(By.css("tr"));
-  // alrRows = alrRows.slice(2);
+  const tables = await driver.findElements(
+    By.css("table.wikitable.sortable.static-row-numbers")
+  );
+  const alrTable = tables[1];
+  let alrRows = await alrTable.findElements(By.css("tr"));
+  alrRows = alrRows.slice(2, -1);
 
-  // for (const alrRow of alrRows) {
-  //   const countryName = await alrRow.findElement(By.css("a")).getText();
+  for (const alrRow of alrRows) {
+    const countryName = await alrRow.findElement(By.css("a")).getText();
 
-  //   const alrCol = await alrRow.findElements(By.css("td"));
-  //   const literacyRateCol = alrCol[1];
-  //   const literacyRate = await literacyRateCol.getText();
+    const alrCol = await alrRow.findElements(By.css("td"));
+    const literacyRateCol = alrCol[1];
+    const literacyRate = await literacyRateCol.getText();
 
-  //   fileString += `${countryName}, ${literacyRate}\n`;
-  //   console.log(`Grabbed literacy rate of ${countryName}`);
-  // }
+    fileString += `${countryName}, ${literacyRate}\n`;
+    console.log(`Grabbed literacy rate of ${countryName}`);
+  }
 
-  // fs.writeFileSync("output.txt", fileString);
+    fs.writeFileSync("output.txt", fileString);
+
+    function searchInput(action) {
+      return driver.findElement(By.css(".cdx-text-input__input"));
+    }
 }
 
